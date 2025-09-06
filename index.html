@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гра «Пам'ять»</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Гра «Пам'ять»</h1>
+            <p>Знайдіть усі пари однакових карток</p>
+        </header>
+
+        <div class="stats">
+            <div class="stat-box">
+                <span class="stat-label">Ходи:</span>
+                <span id="moves" class="stat-value">0</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-label">Час:</span>
+                <span id="timer" class="stat-value">0</span> сек.
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="restart-btn">Почати знову</button>
+        </div>
+
+        <div class="game-board" id="game-board">
+            <!-- Сюди JavaScript вставить картки -->
+        </div>
+
+        <footer>
+            <p>Знайди всі пари якнайшвидше!</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
