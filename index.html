@@ -3,40 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Гра «Пам'ять»</title>
+    <title>Морська пам'ять</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Гра «Пам'ять»</h1>
-            <p>Знайдіть усі пари однакових карток</p>
+            <h1>Морська Пам'ять</h1>
+            <p class="subtitle">Знайди пари морських істот та об'єктів</p>
         </header>
-
-        <div class="stats">
-            <div class="stat-box">
-                <span class="stat-label">Ходи:</span>
-                <span id="moves" class="stat-value">0</span>
+        
+        <div class="main-content">
+            <div class="game-section">
+                <div class="game-info">
+                    <div class="info-item">
+                        <div class="info-label">Ходи</div>
+                        <div class="info-value" id="moves">0</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Час</div>
+                        <div class="info-value" id="timer">0</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Знайдені пари</div>
+                        <div class="info-value" id="pairs">0/8</div>
+                    </div>
+                </div>
+                
+                <div class="game-board" id="game-board">
+                    <!-- Картки будуть додані через JavaScript -->
+                </div>
+                
+                <div class="controls">
+                    <button id="start-btn"><i class="fas fa-play"></i> Почати гру</button>
+                    <button id="reset-btn"><i class="fas fa-redo"></i> Скинути</button>
+                    <button id="reset-leaderboard-btn"><i class="fas fa-trash"></i> Скинути рейтинг</button>
+                </div>
+                
+                <div class="winner-banner" id="winner-banner">
+                    <div class="congrats">Вітаємо з перемогою!</div>
+                    <div>Ваш результат збережено в таблиці рейтингів</div>
+                </div>
             </div>
-            <div class="stat-box">
-                <span class="stat-label">Час:</span>
-                <span id="timer" class="stat-value">0</span> сек.
+            
+            <div class="leaderboard-section">
+                <h2><i class="fas fa-trophy trophy-icon"></i> Рейтинг гравців</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Місце</th>
+                            <th>Ім'я</th>
+                            <th>Час</th>
+                            <th>Ходи</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboard-body">
+                        <!-- Тут будуть відображатися результати -->
+                    </tbody>
+                </table>
             </div>
         </div>
-
-        <div class="controls">
-            <button id="restart-btn">Почати знову</button>
+        
+        <div class="player-form" id="player-form" style="display: none;">
+            <h2>Введіть своє ім'я для рейтингу</h2>
+            <div class="form-group">
+                <label for="player-name">Ім'я:</label>
+                <input type="text" id="player-name" placeholder="Введіть ваше ім'я">
+            </div>
+            <button id="save-score-btn"><i class="fas fa-save"></i> Зберегти результат</button>
         </div>
 
-        <div class="game-board" id="game-board">
-            <!-- Сюди JavaScript вставить картки -->
+        <div class="password-modal" id="password-modal" style="display: none;">
+            <div class="modal-content">
+                <h2>Скинути рейтинг</h2>
+                <div class="form-group">
+                    <label for="password-input">Пароль:</label>
+                    <input type="password" id="password-input" placeholder="Введіть пароль">
+                </div>
+                <div class="modal-buttons">
+                    <button id="confirm-reset-btn">Підтвердити</button>
+                    <button id="cancel-reset-btn">Скасувати</button>
+                </div>
+            </div>
         </div>
-
-        <footer>
-            <p>Знайди всі пари якнайшвидше!</p>
-        </footer>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
